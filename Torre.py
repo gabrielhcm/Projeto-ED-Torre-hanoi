@@ -1,3 +1,17 @@
+#trasformar a pilha em uma lista, talvez sirva pra algo no futuro.
+
+auxiliar1 = []
+auxiliar2 = []
+auxiliar3 = []
+
+popescolhidot = None
+popescolhido = []
+
+
+
+peçasegura = []
+topo = []
+
 class Noh1:
     def __init__(self, valor):
         self.valor = valor
@@ -6,28 +20,31 @@ class Noh1:
 class PilhaEncadeada1:
     def __init__(self):
         self.cabeca = None
-        self.size = 0
+    
     def isEmpty(self):
-        return self.size == 0
- 
-    # Get the top item of the stack
-    def peek(self):
-        # Sanitary check to see if we
-        # are peeking an empty stack.
-        if self.isEmpty():
-            raise Exception("Peeking from an empty stack")
-        return self.cabeca.proximo.valor
+        return self.cabeca is None
+
     def push(self, valor):
         novo_no = Noh1(valor)
         novo_no.proximo = self.cabeca
         self.cabeca = novo_no
-        self.size += 1
 
     def pop(self):
-        removido = self.cabeca.valor
+        if self.isEmpty():
+            return None
+        removido = self.cabeca
+        popescolhidot = removido.valor
+        popescolhido.append(popescolhidot)
+        discom = popescolhido[0]
         self.cabeca = self.cabeca.proximo
-        self.size -= 1
-        return removido
+        return removido.valor 
+        
+    def printpilha(self):
+        current = self.cabeca
+        while current:
+            auxiliar1.append(current.valor)
+            print(current.valor, end=' ')
+            current = current.proximo
 
 
 class Noh2:
@@ -38,6 +55,9 @@ class Noh2:
 class PilhaEncadeada2:
     def __init__(self):
         self.cabeca = None
+    
+    def isEmpty(self):
+        return self.cabeca is None
 
     def push(self, valor):
         novo_no = Noh2(valor)
@@ -45,9 +65,22 @@ class PilhaEncadeada2:
         self.cabeca = novo_no
 
     def pop(self):
-        removido = self.cabeca.valor
+        if self.isEmpty():
+            return None
+        removido = self.cabeca
         self.cabeca = self.cabeca.proximo
-        return removido
+        return removido.valor
+    def peek(self):
+        if self.isEmpty():
+            return None
+        topo.append(self.cabeca.valor)    
+        return self.cabeca.valor ,topo
+    def printpilha2(self):
+        current = self.cabeca
+        while current:
+            auxiliar2.append(current.valor)
+            print(current.valor, end='  ')
+            current = current.proximo
 class Noh3:
     def __init__(self, valor):
         self.valor = valor
@@ -55,6 +88,9 @@ class Noh3:
 class PilhaEncadeada3:
     def __init__(self):
         self.cabeca = None
+    
+    def isEmpty(self):
+        return self.cabeca is None
 
     def push(self, valor):
         novo_no = Noh3(valor)
@@ -62,17 +98,36 @@ class PilhaEncadeada3:
         self.cabeca = novo_no
 
     def pop(self):
-        removido = self.cabeca.valor
+        if self.isEmpty():
+            return None
+        removido = self.cabeca
         self.cabeca = self.cabeca.proximo
-        return removido    
+        return removido.valor
+
+    def printpilha3(self):
+        current = self.cabeca
+        while current:
+            auxiliar3.append(current.valor)
+            print(current.valor, end=' \n ')
+            current = current.proximo 
 
 
 
-'''
-
+PilhaEncadeada1 = PilhaEncadeada1()
+PilhaEncadeada1.push(2)
+PilhaEncadeada1.push(4)
+PilhaEncadeada1.push(6)
+PilhaEncadeada1.push(8)
+PilhaEncadeada1.push(10)
+PilhaEncadeada2 = PilhaEncadeada2()
+PilhaEncadeada2.push(2)
+PilhaEncadeada3 = PilhaEncadeada3()
+PilhaEncadeada3.push(2)
 rodando = True
 
 peçassegura = None
+
+
 
 while rodando:
 
@@ -91,18 +146,19 @@ while rodando:
         elif escolha == 1:
                 escolhatorre = True
                 while escolhatorre:
-                    print("Escolha uma torre para remover uma peça!: \n Torre A \n Torre B \n Torre C  \n Torre D \n Voltar ao menu principal F ")
-                    mover = None
+                    print("Escolha uma torre para remover uma peça!: \n Torre A \n Torre B \n Torre C \n Voltar ao menu principal F ")
+                    #mover = None
                     mover = str(input()).upper()
                     print(mover)
                     if mover == "A":
                         print("tente digitar o numero da torre!")
-
+                        print("Removeu:", PilhaEncadeada1.pop())
+                        print("pilha depois da remoção")
+                        PilhaEncadeada1.printpilha()
+                        break
                     elif mover == "B": 
                         print("tente digitar o numero da torresfds!")
                     elif mover == "C":   
-                        print("tente digitar o numero da torrfdse!")
-                    elif mover == "D":       
                         print("tente digitar o numero da torrfdse!")
                     elif mover == "F":
                          break
@@ -110,39 +166,55 @@ while rodando:
                         #print("tente digitar o numero da torre!")    
             
         elif escolha == 2:
-                print("tente digitar o numero da torre!")
-
-
+                escolhatorreremover = True
+                while escolhatorreremover:
+                    print("Escolha uma torre para colocar uma peça!: \n Torre A \n Torre B \n Torre C \n Voltar ao menu principal F ")
+                    mover = None
+                    mover = str(input()).upper()
+                    print(mover)
+                    if mover == "A":
+                        print("tente digitar o numero da torresfds!")
+                    elif mover == "B": 
+                        print(topo)
+                        if (int(popescolhidot)) >= topo:
+                            Print("Você nao pode colocar uma peça maior que a peça que está no topo da torre!")
+                        else:    
+                            PilhaEncadeada2.push(popescolhido[0])
+                            print(f"Você colocou a peça:{popescolhido}!")
+                            print(popescolhido)
+                            popescolhido.clear()
+                        
+                    elif mover == "C":   
+                        print("tente digitar o numero da torrfdse!")
+                    elif mover == "F":
+                         break
+                    #else:
+                        #print("tente digitar o numero da torre!") 
         
         elif escolha == 3:
-                print(f"Você está segurando a peça de tamanho {Peçasegura}")
-
-
-                if peçassegura == ():
+            peçasegura = popescolhido
+            print(peçasegura)
+            if peçasegura == []:
                     print("Você nao esta com nenhuma peça em mãos")
+            else:    
+                    print(f"Você está segurando a peça de tamanho: {peçasegura}")
+               
+        
             
         elif escolha == 4:
                 print("tente digitar o numero da torre!")
-        
+                PilhaEncadeada1.printpilha()
+                print("\n") 
+                PilhaEncadeada2.printpilha2()
+                print("\n")
+                PilhaEncadeada3.printpilha3()
+                
+                
         elif escolha == 5:
             rodando == False
 
-'''    
 
 
 
 
-'''pilha.push(2)
-pilha.push(4)
-pilha.push(6)
-pilha.push(8)
-pilha.push(10)'''
-# fazer: tratar inserção na pilha cheia
 
-
-# fazer: chamar metodo que imprime a pilha
-
-for i in range(1, 11):
-    pilha = PilhaEncadeada1()
-    pilha.push(i)
-print(f"pilha: {pilha}")
