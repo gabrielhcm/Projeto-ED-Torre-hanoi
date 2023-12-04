@@ -195,8 +195,11 @@ def retirar_peca():
          #print("tente digitar o numero da torre!")
         print("Removeu:")
         valorremovidotemp = PilhaEncadeada2.pop()
+        popint = int(popescolhido[0])
+        print(popint)
+        poptemp = popint
         #print(valorremovidotemp) 
-        valorremovido = valorremovidotemp
+        #valorremovido = valorremovidotemp
         print("pilha depois da remoção")
         PilhaEncadeada2.printpilha2()
         return poptemp
@@ -204,7 +207,10 @@ def retirar_peca():
         #print("tente digitar o numero da torrfdse!")
         print("Removeu:")
         valorremovidotemp = PilhaEncadeada3.pop()
-        print(valorremovidotemp) 
+        popint = int(popescolhido[0])
+        print(popint)
+        poptemp = popint
+        #print(valorremovidotemp) 
         valorremovido = valorremovidotemp
         print("pilha depois da remoção")
         PilhaEncadeada3.printpilha3()
