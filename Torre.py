@@ -182,7 +182,7 @@ while rodando:
                     elif mover == "B": 
                         print(topo)
                         if (int(popescolhidot)) >= topo:
-                            Print("Você nao pode colocar uma peça maior que a peça que está no topo da torre!")
+                            print("Você nao pode colocar uma peça maior que a peça que está no topo da torre!")
                         else:    
                             PilhaEncadeada2.push(popescolhido[0])
                             print(f"Você colocou a peça:{popescolhido}!")
