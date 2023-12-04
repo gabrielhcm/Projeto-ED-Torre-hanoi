@@ -13,13 +13,17 @@ Torre de hanoi usando pilhas
    Gabriel Henrique da conceição Meira Matricula: 170010481
 
 3. Contexto de Aplicação
+
    Projeto de uma torre de hanoi usando pilhas
 
    Uso de 3 pilhas para a demonstração e resolução de uma torre de hanoi
 
 4. Estruturas de Dados Utilizadas
+
    Pilhas Encadeadas
+
 5. Instruções de Execução
+
    Rode o programa.
 
 6. Instruções de Uso
