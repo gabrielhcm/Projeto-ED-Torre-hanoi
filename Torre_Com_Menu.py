@@ -148,8 +148,6 @@ PilhaEncadeada1 = PilhaEncadeada1()
 PilhaEncadeada1.push(10)
 PilhaEncadeada1.push(8)
 PilhaEncadeada1.push(6)
-PilhaEncadeada1.push(4)
-PilhaEncadeada1.push(2)
 PilhaEncadeada2 = PilhaEncadeada2()
 #PilhaEncadeada2.push(11)
 #PilhaEncadeada3 = PilhaEncadeada3()
@@ -193,24 +191,24 @@ def retirar_peca():
         return 
         #break
     elif mover == "B": 
-        print("tente digitar o numero da torresfds!")
+        #print("tente digitar o numero da torresfds!")
          #print("tente digitar o numero da torre!")
         print("Removeu:")
         valorremovidotemp = PilhaEncadeada2.pop()
-        print(valorremovidotemp) 
+        #print(valorremovidotemp) 
         valorremovido = valorremovidotemp
         print("pilha depois da remoção")
-        PilhaEncadeada1.printpilha()
-        return 
+        PilhaEncadeada2.printpilha2()
+        return poptemp
     elif mover == "C":   
-        print("tente digitar o numero da torrfdse!")
+        #print("tente digitar o numero da torrfdse!")
         print("Removeu:")
         valorremovidotemp = PilhaEncadeada3.pop()
         print(valorremovidotemp) 
         valorremovido = valorremovidotemp
         print("pilha depois da remoção")
-        PilhaEncadeada1.printpilha()
-        return 
+        PilhaEncadeada3.printpilha3()
+        return poptemp
     elif mover == "F":
         return
     #else:
@@ -228,14 +226,12 @@ def colocar_peca():
     #popescolhidoint = list(map(int,popescolhido))
     #print (popescolhidoint)  
     if mover == "A":
-        if popescolhidoint[0] > topo1:
-            print("Você nao pode colocar uma peça maior que a peça que está no topo da torre!0")
-        else:    
-            PilhaEncadeada2.push(popescolhido[0])
+            PilhaEncadeada1.push(popescolhido[0])
             print(f"Você colocou a peça:{popescolhido}!")
             print(popescolhido)
             popescolhido.clear()
-        print("tente digitar o numero da torresfds!")
+            print(topo1)
+            #print("tente digitar o numero da torresfds!")
     elif mover == "B": 
         popescolhidoint = list(map(int,popescolhido))
         print (popescolhidoint)  
@@ -244,17 +240,18 @@ def colocar_peca():
         print(f"Você colocou a peça:{popescolhido}!")
         print(popescolhido)
         popescolhido.clear()
-        print(topo2)
+        
         #if popescolhidoint[0] > topo2:
             #print("Você nao pode colocar uma peça maior que a peça que está no topo da torre!1")
     elif mover == "C":
         popescolhidoint = list(map(int,popescolhido)) 
-        print (popescolhidoint)  
+        print (popescolhidoint)
+        print(topo3)  
         PilhaEncadeada3.push(popescolhido[0])
         print(f"Você colocou a peça:{popescolhido}!")
         print(popescolhido)
         popescolhido.clear()
-        print("tente digitar o numero da torresfds!")
+        #print("tente digitar o numero da torresfds!")
         #if popescolhidoint[0] != topoemint3:
           #  print("Você nao pode colocar uma peça maior que a peça que está no topo da torre!2")
 
