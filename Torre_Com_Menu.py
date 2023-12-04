@@ -145,11 +145,11 @@ class PilhaEncadeada3:
 #colocando os discos na torre 
 
 PilhaEncadeada1 = PilhaEncadeada1()
-PilhaEncadeada1.push(2)
-PilhaEncadeada1.push(4)
-PilhaEncadeada1.push(6)
-PilhaEncadeada1.push(8)
 PilhaEncadeada1.push(10)
+PilhaEncadeada1.push(8)
+PilhaEncadeada1.push(6)
+PilhaEncadeada1.push(4)
+PilhaEncadeada1.push(2)
 PilhaEncadeada2 = PilhaEncadeada2()
 #PilhaEncadeada2.push(11)
 #PilhaEncadeada3 = PilhaEncadeada3()
@@ -243,20 +243,20 @@ def colocar_peca():
         PilhaEncadeada2.push(popescolhido[0])
         print(f"Você colocou a peça:{popescolhido}!")
         print(popescolhido)
-        #popescolhido.clear()
+        popescolhido.clear()
         print(topo2)
-        if popescolhidoint[0] > topo2:
-            print("Você nao pode colocar uma peça maior que a peça que está no topo da torre!1")
+        #if popescolhidoint[0] > topo2:
+            #print("Você nao pode colocar uma peça maior que a peça que está no topo da torre!1")
     elif mover == "C":
         popescolhidoint = list(map(int,popescolhido)) 
         print (popescolhidoint)  
-        PilhaEncadeada2.push(popescolhido[0])
+        PilhaEncadeada3.push(popescolhido[0])
         print(f"Você colocou a peça:{popescolhido}!")
         print(popescolhido)
         popescolhido.clear()
         print("tente digitar o numero da torresfds!")
-        if popescolhidoint[0] != topoemint3:
-            print("Você nao pode colocar uma peça maior que a peça que está no topo da torre!2")
+        #if popescolhidoint[0] != topoemint3:
+          #  print("Você nao pode colocar uma peça maior que a peça que está no topo da torre!2")
 
     elif mover == "F":
          #break
@@ -282,7 +282,7 @@ def imprimir_torres():
     popescolhidoint = list(map(int,popescolhido))
     print(popescolhidoint)
     print(topo1)
-    print(PilhaEncadeada1.peek)
+    
 
 #chamando o menu principal 
 
