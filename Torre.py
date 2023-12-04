@@ -1,3 +1,6 @@
+import sys
+
+
 #trasformar a pilha em uma lista, talvez sirva pra algo no futuro.
 
 auxiliar1 = []
@@ -128,10 +131,12 @@ rodando = True
 peçassegura = None
 
 
+print( " Escolha uma das opçoes:\n 0 -  \n 1 - retirar uma peça de lugar\n 2 - Colocar uma peça em outro disco\n 3 - mostrar o disco que você está segurando\n 4 - Imprimir as torres\n 5 - Sair ")   
+
 
 while rodando:
 
-        print( " Escolha uma das opçoes:\n 0 - Regras da torre \n 1 - retirar uma peça de lugar\n 2 - Colocar uma peça em outro disco\n 3 - mostrar o disco que você está segurando\n 4 - Imprimir as torres\n 5 - Sair ")    
+         
         escolha = ()
         escolha = int(input())
     
