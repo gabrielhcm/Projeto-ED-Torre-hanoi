@@ -1,7 +1,7 @@
 import sys
 import time
 
-#trasformar a pilha em uma lista, talvez sirva pra algo no futuro.
+#trasformar a pilha em uma lista auxiliar
 
 auxiliar1 = []
 auxiliar2 = []
@@ -154,7 +154,7 @@ PilhaEncadeada2 = PilhaEncadeada2()
 #PilhaEncadeada3.push(12)
 PilhaEncadeada3 = PilhaEncadeada3()
 
-
+#iniciando a busca binaria
 
 def busca_binaria(arr, alvo):
     inf, sup = 0, len(arr) - 1
@@ -183,7 +183,8 @@ def menu_principal():
     print("4. Imprimir as torres")
     print("5. Fazer busca binaria nas torres")
     print("6. Sair")
-    #time.sleep(1)
+    print("\n")
+    time.sleep(1)
 
 def regras_torre():
     print("Apenas um disco pode ser movido por vez e nunca um disco maior deve ficar por cima de um disco menor.")
@@ -192,7 +193,6 @@ def retirar_peca():
     print("Escolha uma torre para remover uma peça!: \n Torre A \n Torre B \n Torre C \n Voltar ao menu principal F ")
 #mover = None
     mover = str(input()).upper()
-    print(mover)
     if mover == "A":
         print("Removeu:") 
         valorremovidotemp = PilhaEncadeada1.pop()
@@ -231,11 +231,11 @@ def retirar_peca():
         print("pilha depois da remoção")
         PilhaEncadeada3.printpilha3()
         return poptemp
-    elif mover == "F":
+    elif mover == "F" or "f":
         return
     #else:
     #print("tente digitar o numero da torre!")
-        print("batata")
+        #print("batata")
 
 def colocar_peca():
      
@@ -244,7 +244,7 @@ def colocar_peca():
     print("Escolha uma torre para colocar uma peça!: \n Torre A \n Torre B \n Torre C \n Voltar ao menu principal F ")
     mover = str()
     mover = str(input()).upper()
-    print(mover)
+    #print(mover)
     #popescolhidoint = list(map(int,popescolhido))
     #print (popescolhidoint)  
     if mover == "A":
@@ -293,22 +293,32 @@ def Mostrar_discosegurando():
 
 def imprimir_torres():
     print("A situação atual das torres é:")
+    print("torre A:")
+    print("\n") 
     PilhaEncadeada1.printpilha()
+    print("\n")
+    print("torre B:")
     print("\n") 
     PilhaEncadeada2.printpilha2()
     print("\n")
+    print("torre C:")
+    print("\n") 
     PilhaEncadeada3.printpilha3()
     popescolhidoint = list(map(int,popescolhido))
-    print(popescolhidoint)
-    print(topo1)
+    print("\n")
+    print(f"Você está segurando o disco{popescolhidoint}")
+    print("\n")
+    #print(topo1)
 
 def busca_binariamenu():
     print("Escolha uma torre para fazer a  busca binaria!: \n Torre A \n Torre B \n Torre C \n Voltar ao menu principal F ")
     #mover = None
     mover = str(input()).upper()
-    print(mover)
     if mover == "A":
+        print("A pilha é:")
+        #print("\n")
         PilhaEncadeada1.printpilha()
+        print("\n")
         lista_binaria = auxiliar1
         elemento_binaria = int(input("escolha um numero para pesquisar na torre "))
         resultado_busca_binaria = busca_binaria(lista_binaria, elemento_binaria)         
@@ -316,22 +326,25 @@ def busca_binariamenu():
         print(auxiliar1) 
         return
     elif mover == "B": 
+        print("A pilha é:")
         PilhaEncadeada2.printpilha2()
+        print("\n")
         lista_binaria = auxiliar2
         elemento_binaria = int(input("escolha um numero para pesquisar na torre "))
         resultado_busca_binaria = busca_binaria(lista_binaria, elemento_binaria)         
         print(f"Busca Binária: Elemento {elemento_binaria} encontrado no índice {resultado_busca_binaria}" if resultado_busca_binaria != -1 else f"Elemento {elemento_binaria} não  encontrado na lista para busca binária")
         return
     elif mover == "C":
+        print("A pilha é:")
         PilhaEncadeada3.printpilha3()
-        lista_binaria = auxiliar1
+        print("\n")
         lista_binaria = auxiliar3
         elemento_binaria = int(input("escolha um numero para pesquisar na torre "))
         resultado_busca_binaria = busca_binaria(lista_binaria, elemento_binaria)         
         print(f"Busca Binária: Elemento {elemento_binaria} encontrado no índice {resultado_busca_binaria}" if resultado_busca_binaria != -1 else f"Elemento {elemento_binaria} não  encontrado na lista para busca binária")
         return
        
-    elif mover == "F":
+    elif mover == "F" or "f":
         return
 
     lista_binaria = [1, 2, 4, 5, 7, 8, 9]
