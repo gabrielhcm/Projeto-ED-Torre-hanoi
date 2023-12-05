@@ -155,6 +155,21 @@ PilhaEncadeada2 = PilhaEncadeada2()
 PilhaEncadeada3 = PilhaEncadeada3()
 
 
+
+def busca_binaria(arr, alvo):
+    inf, sup = 0, len(arr) - 1
+
+    while inf <= sup:
+        meio = (inf + sup) // 2
+        meio_val = arr[meio]
+
+        if meio_val == alvo:
+            return meio  # Elemento encontrado, retorna o índice
+        elif meio_val < alvo:
+            inf = meio + 1
+        else:
+            sup = meio - 1    
+
 #Criação do menu com as opçoes!
 
 
@@ -166,7 +181,8 @@ def menu_principal():
     print("2. Colocar uma peça em outro disco")
     print("3. Mostrar o disco que você está segurando")
     print("4. Imprimir as torres")
-    print("5. Sair")
+    print("5. Fazer busca binaria nas torres")
+    print("6. Sair")
     #time.sleep(1)
 
 def regras_torre():
@@ -285,8 +301,43 @@ def imprimir_torres():
     popescolhidoint = list(map(int,popescolhido))
     print(popescolhidoint)
     print(topo1)
-    
 
+def busca_binariamenu():
+    print("Escolha uma torre para fazer a  busca binaria!: \n Torre A \n Torre B \n Torre C \n Voltar ao menu principal F ")
+    #mover = None
+    mover = str(input()).upper()
+    print(mover)
+    if mover == "A":
+        PilhaEncadeada1.printpilha()
+        lista_binaria = auxiliar1
+        elemento_binaria = int(input("escolha um numero para pesquisar na torre "))
+        resultado_busca_binaria = busca_binaria(lista_binaria, elemento_binaria)         
+        print(f"Busca Binária: Elemento {elemento_binaria} encontrado no índice {resultado_busca_binaria}" if resultado_busca_binaria != -1 else f"Elemento {elemento_binaria} não  encontrado na lista para busca binária")   
+        print(auxiliar1) 
+        return
+    elif mover == "B": 
+        PilhaEncadeada2.printpilha2()
+        lista_binaria = auxiliar2
+        elemento_binaria = int(input("escolha um numero para pesquisar na torre "))
+        resultado_busca_binaria = busca_binaria(lista_binaria, elemento_binaria)         
+        print(f"Busca Binária: Elemento {elemento_binaria} encontrado no índice {resultado_busca_binaria}" if resultado_busca_binaria != -1 else f"Elemento {elemento_binaria} não  encontrado na lista para busca binária")
+        return
+    elif mover == "C":
+        PilhaEncadeada3.printpilha3()
+        lista_binaria = auxiliar1
+        lista_binaria = auxiliar3
+        elemento_binaria = int(input("escolha um numero para pesquisar na torre "))
+        resultado_busca_binaria = busca_binaria(lista_binaria, elemento_binaria)         
+        print(f"Busca Binária: Elemento {elemento_binaria} encontrado no índice {resultado_busca_binaria}" if resultado_busca_binaria != -1 else f"Elemento {elemento_binaria} não  encontrado na lista para busca binária")
+        return
+       
+    elif mover == "F":
+        return
+
+    lista_binaria = [1, 2, 4, 5, 7, 8, 9]
+    elemento_binaria = int(input("escolha um numero para pesquisar na torre "))
+    resultado_busca_binaria = busca_binaria(lista_binaria, elemento_binaria)         
+    print(f"Busca Binária: Elemento {elemento_binaria} encontrado no índice {resultado_busca_binaria}" if resultado_busca_binaria != -1 else f"Elemento {elemento_binaria} não encontrado na lista para busca binária")
 #chamando o menu principal 
 
 def main():
@@ -303,7 +354,10 @@ def main():
         elif opcao == "4":
             imprimir_torres()  
         elif opcao == "5":
-            sys.exit()
+            busca_binariamenu()
+            
+        elif opcao == "6":
+           sys.exit()
         elif opcao == "0":
             regras_torre()
         else:
