@@ -7,7 +7,7 @@ A estrutura de pilhas foi utilizada
 
 1. Título do Projeto
 
-Torre de hanoi usando pilhas
+Torre de hanoi usando o conceito de pilhas
 
 2. Autores
    Feito por:
@@ -16,7 +16,7 @@ Torre de hanoi usando pilhas
 
 3. Contexto de Aplicação
 
-   Projeto de uma torre de hanoi usando pilhas
+   Projeto de uma torre de hanoi usando pilhas, as três pilhas faram o papel das torres.
 
    Uso de 3 pilhas para a demonstração e resolução de uma torre de hanoi
 
@@ -26,7 +26,8 @@ Torre de hanoi usando pilhas
 
 5. Instruções de Execução
 
-   Rode o programa.
+   Rode o programa
+   irá aparecer um menu onde você pode escolher entre as 5 opções disponíveis.
 
 6. Instruções de Uso
 
