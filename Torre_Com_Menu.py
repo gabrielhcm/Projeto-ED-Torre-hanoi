@@ -144,15 +144,37 @@ class PilhaEncadeada3:
 
 #colocando os discos na torre 
 
+# fazendo um insetion sort para colocar os discor em ordem de maior em baixo e menor em cima 
+
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+
+lista = [8, 10, 6]
+
+insertion_sort(lista)
+listaord = lista
+
 PilhaEncadeada1 = PilhaEncadeada1()
-PilhaEncadeada1.push(10)
-PilhaEncadeada1.push(8)
-PilhaEncadeada1.push(6)
+PilhaEncadeada1.push(listaord[2])
+PilhaEncadeada1.push(listaord[1])
+PilhaEncadeada1.push(listaord[0])
 PilhaEncadeada2 = PilhaEncadeada2()
 #PilhaEncadeada2.push(11)
 #PilhaEncadeada3 = PilhaEncadeada3()
 #PilhaEncadeada3.push(12)
 PilhaEncadeada3 = PilhaEncadeada3()
+
+
+#insertion_sort(lista)
+
+#PilhaEncadeada1.push(lista)
+
 
 #iniciando a busca binaria
 
